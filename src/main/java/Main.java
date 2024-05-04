@@ -60,7 +60,7 @@ public class Main extends JFrame {
         panelIzquierdo.add(Box.createRigidArea(new Dimension(0, 10)));//Espacio entre la imagen y el texto debajo
 
         // Frase
-        JLabel labelFrase = new JLabel("Bienvenido al Sistema de Gestión de Cultivos de Bacterias");
+        JLabel labelFrase = new JLabel("¡Bienvenido al Sistema!");
         labelFrase.setAlignmentX(Component.CENTER_ALIGNMENT);
         labelFrase.setFont(new Font("Arial", Font.BOLD, 20));
         panelIzquierdo.add(labelFrase);
@@ -131,10 +131,10 @@ public class Main extends JFrame {
     }
 
     public static void main(String[] args) {
-        // Crear y mostrar el JFrame
         SwingUtilities.invokeLater(() -> {
-            Main frame = new Main();
-            frame.setVisible(true);
+            Main mainFrame = new Main();
+            LoginFrame loginFrame = new LoginFrame(mainFrame);
+            loginFrame.setVisible(true);
         });
     }
 }
