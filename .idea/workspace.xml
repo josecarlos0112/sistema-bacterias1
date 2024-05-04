@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8f1c7b5-385e-4730-a49e-812907b200ff" name="Changes" comment="creacion del proyecto y de los paquetes">
-      <change afterPath="$PROJECT_DIR$/src/main/java/logica/PoblacionBacterias.java" afterDir="false" />
+    <list default="true" id="e8f1c7b5-385e-4730-a49e-812907b200ff" name="Changes" comment="creacion de clase PoblacionBacterias">
+      <change afterPath="$PROJECT_DIR$/src/main/java/logica/Experimento.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/logica/PoblacionBacterias.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logica/PoblacionBacterias.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +87,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1714827198965</updated>
-      <workItem from="1714827200274" duration="1437000" />
+      <workItem from="1714827200274" duration="1640000" />
     </task>
     <task id="LOCAL-00001" summary="creacion del proyecto y de los paquetes">
       <option name="closed" value="true" />
@@ -96,7 +97,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714827635928</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="creacion de clase PoblacionBacterias">
+      <option name="closed" value="true" />
+      <created>1714828712517</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1714828712518</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -104,6 +113,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="creacion del proyecto y de los paquetes" />
-    <option name="LAST_COMMIT_MESSAGE" value="creacion del proyecto y de los paquetes" />
+    <MESSAGE value="creacion de clase PoblacionBacterias" />
+    <option name="LAST_COMMIT_MESSAGE" value="creacion de clase PoblacionBacterias" />
   </component>
 </project>

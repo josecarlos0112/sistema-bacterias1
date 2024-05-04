@@ -72,6 +72,47 @@ public class PoblacionBacterias {
         this.name = name;
     }
 
+    public void setStartDate(LocalDate startDate) {
+        this.startDate = startDate;
+    }
+
+    public void setEndDate(LocalDate endDate) {
+        this.endDate = endDate;
+    }
+
+    public void setInitialBacteriaCount(int initialBacteriaCount) {
+        this.initialBacteriaCount = initialBacteriaCount;
+    }
+
+    public void setTemperature(double temperature) {
+        this.temperature = temperature;
+    }
+
+    public void setLightCondition(String lightCondition) {
+        this.lightCondition = lightCondition;
+    }
+
+    public void setInitialFood(int initialFood) {
+        this.initialFood = initialFood;
+    }
+
+    public void setFinalFood(int finalFood) {
+        this.finalFood = finalFood;
+    }
+
+    public void setIncrementDay(int incrementDay) {
+        this.incrementDay = incrementDay;
+    }
+
+    public void setIncrementFood(int incrementFood) {
+        this.incrementFood = incrementFood;
+    }
+
+    public int calculateBacteriaForDay(int day) {
+
+        return day;
+    }
+
     public int calculateFoodForDay(int day) {
         // Implement the logic to calculate the food for a specific day
         return day;
