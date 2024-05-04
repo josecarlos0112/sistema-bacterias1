@@ -35,7 +35,7 @@ public class Main extends JFrame {
         String iconPath = "src/resources/uax-corto.png";
         ImageIcon icon = new ImageIcon(iconPath);
         setIconImage(icon.getImage());
-        setTitle("Sistema de Gestión y Análisis de Datos Multidimensionales");
+        setTitle("Sistema de Gestión de Cultivos de Bacterias");
         setSize(1000, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -60,7 +60,7 @@ public class Main extends JFrame {
         panelIzquierdo.add(Box.createRigidArea(new Dimension(0, 10)));//Espacio entre la imagen y el texto debajo
 
         // Frase
-        JLabel labelFrase = new JLabel("Bienvenido al Sistema de Gestión de Publicaciones");
+        JLabel labelFrase = new JLabel("Bienvenido al Sistema de Gestión de Cultivos de Bacterias");
         labelFrase.setAlignmentX(Component.CENTER_ALIGNMENT);
         labelFrase.setFont(new Font("Arial", Font.BOLD, 20));
         panelIzquierdo.add(labelFrase);
