@@ -9,11 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8f1c7b5-385e-4730-a49e-812907b200ff" name="Changes" comment="actualizaciones">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/PanelAnalisis.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/PanelIndexacion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/PanelModelado.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/PanelRelaciones.java" afterDir="false" />
+    <list default="true" id="e8f1c7b5-385e-4730-a49e-812907b200ff" name="Changes" comment="creacion del segundo package y sus clases">
+      <change afterPath="$PROJECT_DIR$/src/main/java/data/ExperimentoData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/data/PoblacionBacteriasData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -108,7 +106,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1714827198965</updated>
-      <workItem from="1714827200274" duration="11294000" />
+      <workItem from="1714827200274" duration="13138000" />
     </task>
     <task id="LOCAL-00001" summary="creacion del proyecto y de los paquetes">
       <option name="closed" value="true" />
@@ -174,7 +172,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714859902125</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="creacion del segundo package y sus clases">
+      <option name="closed" value="true" />
+      <created>1714906735746</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1714906735746</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -187,6 +193,7 @@
     <MESSAGE value="creacion de clase Experimento" />
     <MESSAGE value="Actualizacion del main principal" />
     <MESSAGE value="actualizaciones" />
-    <option name="LAST_COMMIT_MESSAGE" value="actualizaciones" />
+    <MESSAGE value="creacion del segundo package y sus clases" />
+    <option name="LAST_COMMIT_MESSAGE" value="creacion del segundo package y sus clases" />
   </component>
 </project>
