@@ -1,10 +1,11 @@
 package data;
 
-import logica.PoblacionBacterias;
+import logica.PoblacionBacteriasManager;
+
 import java.io.*;
 
 public class PoblacionBacteriasData {
-    public void guardarDatos(PoblacionBacterias poblacion, String filename) {
+    public void guardarDatos(PoblacionBacteriasManager poblacion, String filename) {
         try {
             FileOutputStream fileOut = new FileOutputStream(filename);
             ObjectOutputStream out = new ObjectOutputStream(fileOut);
@@ -16,12 +17,12 @@ public class PoblacionBacteriasData {
         }
     }
 
-    public PoblacionBacterias cargarDatos(String filename) {
-        PoblacionBacterias poblacion = null;
+    public PoblacionBacteriasManager cargarDatos(String filename) {
+        PoblacionBacteriasManager poblacion = null;
         try {
             FileInputStream fileIn = new FileInputStream(filename);
             ObjectInputStream in = new ObjectInputStream(fileIn);
-            poblacion = (PoblacionBacterias) in.readObject();
+            poblacion = (PoblacionBacteriasManager) in.readObject();
             in.close();
             fileIn.close();
         } catch (IOException i) {
