@@ -2,8 +2,8 @@ package ui;
 
 import javax.swing.*;
 
-public class PanelAnalisis extends JPanel {
-    public PanelAnalisis() {
+public class RelacionesUI extends JPanel {
+    public RelacionesUI() {
         // Inicialización del panel
     }
 }

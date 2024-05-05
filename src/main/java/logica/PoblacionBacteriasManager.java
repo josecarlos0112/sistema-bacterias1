@@ -3,7 +3,7 @@ package logica;
 import java.time.LocalDate;
 
 
-public class PoblacionBacterias {
+public class PoblacionBacteriasManager {
     private String name;
     private LocalDate startDate;
     private LocalDate endDate;
@@ -15,7 +15,7 @@ public class PoblacionBacterias {
     private int incrementDay;
     private int incrementFood;
 
-    public PoblacionBacterias(String name, LocalDate startDate, LocalDate endDate, int initialBacteriaCount, double temperature, String lightCondition, int initialFood, int incrementDay, int incrementFood, int finalFood) {
+    public PoblacionBacteriasManager(String name, LocalDate startDate, LocalDate endDate, int initialBacteriaCount, double temperature, String lightCondition, int initialFood, int incrementDay, int incrementFood, int finalFood) {
         this.name = name;
         this.startDate = startDate;
         this.endDate = endDate;

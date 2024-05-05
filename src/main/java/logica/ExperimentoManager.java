@@ -3,10 +3,10 @@ package logica;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Experimento {
+public class ExperimentoManager {
     private List<PoblacionBacterias> populations;
 
-    public Experimento() {
+    public ExperimentoManager() {
         this.populations = new ArrayList<>();
     }
 

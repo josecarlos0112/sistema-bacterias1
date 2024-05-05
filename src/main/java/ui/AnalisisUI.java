@@ -2,8 +2,8 @@ package ui;
 
 import javax.swing.*;
 
-public class PanelIndexacion extends JPanel {
-    public PanelIndexacion() {
+public class AnalisisUI extends JPanel {
+    public AnalisisUI() {
         // Inicialización del panel
     }
 }
