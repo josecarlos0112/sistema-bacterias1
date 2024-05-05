@@ -4,22 +4,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ExperimentoManager {
-    private List<PoblacionBacterias> populations;
+    private List<PoblacionBacteriasManager> populations;
 
     public ExperimentoManager() {
         this.populations = new ArrayList<>();
     }
 
-    public void addPopulation(PoblacionBacterias population) {
+    public void addPopulation(PoblacionBacteriasManager population) {
         this.populations.add(population);
     }
 
-    public void removePopulation(PoblacionBacterias population) {
+    public void removePopulation(PoblacionBacteriasManager population) {
         this.populations.remove(population);
     }
 
-    public PoblacionBacterias getPopulation(String name) {
-        for (PoblacionBacterias population : populations) {
+    public PoblacionBacteriasManager getPopulation(String name) {
+        for (PoblacionBacteriasManager population : populations) {
             if (population.getName().equals(name)) {
                 return population;
             }
@@ -27,11 +27,11 @@ public class ExperimentoManager {
         return null;
     }
 
-    public List<PoblacionBacterias> getPopulations() {
+    public List<PoblacionBacteriasManager> getPopulations() {
         return populations;
     }
 
-    public void setPopulations(List<PoblacionBacterias> populations) {
+    public void setPopulations(List<PoblacionBacteriasManager> populations) {
         this.populations = populations;
     }
 
@@ -48,7 +48,7 @@ public class ExperimentoManager {
     }
 
     public boolean containsPopulation(String name) {
-        for (PoblacionBacterias population : populations) {
+        for (PoblacionBacteriasManager population : populations) {
             if (population.getName().equals(name)) {
                 return true;
             }
@@ -56,8 +56,8 @@ public class ExperimentoManager {
         return false;
     }
 
-public void updatePopulation(PoblacionBacterias population) {
-        for (PoblacionBacterias p : populations) {
+public void updatePopulation(PoblacionBacteriasManager population) {
+        for (PoblacionBacteriasManager p : populations) {
             if (p.getName().equals(population.getName())) {
                 p.setStartDate(population.getStartDate());
                 p.setEndDate(population.getEndDate());
@@ -73,7 +73,7 @@ public void updatePopulation(PoblacionBacterias population) {
     }
 
     public void removePopulation(String name) {
-        for (PoblacionBacterias population : populations) {
+        for (PoblacionBacteriasManager population : populations) {
             if (population.getName().equals(name)) {
                 populations.remove(population);
                 break;
@@ -86,7 +86,7 @@ public void updatePopulation(PoblacionBacterias population) {
     }
 
     public void print() {
-        for (PoblacionBacterias population : populations) {
+        for (PoblacionBacteriasManager population : populations) {
             System.out.println(population);
         }
     }

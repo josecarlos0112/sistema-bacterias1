@@ -1,6 +1,7 @@
 package logica;
 
 import java.time.LocalDate;
+import java.util.List;
 
 
 public class PoblacionBacteriasManager {
@@ -26,6 +27,20 @@ public class PoblacionBacteriasManager {
         this.incrementDay = incrementDay;
         this.incrementFood = incrementFood;
         this.finalFood = finalFood;
+    }
+
+    private List<PoblacionBacteriasManager> poblaciones;
+
+    public void addPoblacion(PoblacionBacteriasManager poblacion) {
+
+    }
+
+    public void removePoblacion(PoblacionBacteriasManager poblacion) {
+        // Implement the logic to remove a bacteria population
+    }
+
+    public void updatePoblacion(PoblacionBacteriasManager poblacion) {
+        // Implement the logic to update a bacteria population
     }
 
     public String getName() {
