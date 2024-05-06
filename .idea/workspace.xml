@@ -11,8 +11,10 @@
   <component name="ChangeListManager">
     <list default="true" id="e8f1c7b5-385e-4730-a49e-812907b200ff" name="Changes" comment="actualizacion de las clases">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data/ExperimentoData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/ExperimentoData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data/PoblacionBacteriasData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/PoblacionBacteriasData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LoginFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LoginFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/logica/PoblacionBacteriasManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logica/PoblacionBacteriasManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/PanelModelado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/MenuPrincipalUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,9 +32,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2g0GgwfbofcXuvSj5lJKzuvfSAU" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -53,7 +55,9 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/usuario/Documents/GitHub/sistema_multidimension",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -107,7 +111,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1714827198965</updated>
-      <workItem from="1714827200274" duration="14405000" />
+      <workItem from="1714827200274" duration="25447000" />
+      <workItem from="1714993031750" duration="1025000" />
     </task>
     <task id="LOCAL-00001" summary="creacion del proyecto y de los paquetes">
       <option name="closed" value="true" />
@@ -205,7 +210,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714911777157</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="actualizacion de las clases">
+      <option name="closed" value="true" />
+      <created>1714913358890</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1714913358890</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

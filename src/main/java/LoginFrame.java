@@ -1,9 +1,18 @@
+import logica.ExperimentoManager;
+import logica.PoblacionBacteriasManager;
+import ui.MenuPrincipalUI;
+
 import javax.swing.*;
 import java.awt.*;
 
 public class LoginFrame extends JFrame {
     private Main mainFrame;
-    public LoginFrame(Main mainFrame) {
+    private MenuPrincipalUI menuPrincipalUI;
+
+    public LoginFrame(Main mainFrame, ExperimentoManager experimentoManager, PoblacionBacteriasManager poblacionBacteriasManager) {
+        this.mainFrame = mainFrame;
+        this.menuPrincipalUI = new MenuPrincipalUI(experimentoManager, poblacionBacteriasManager);
+
         // Configuración del JFrame
         setTitle("Login");
         setSize(300, 150);
@@ -22,9 +31,10 @@ public class LoginFrame extends JFrame {
         // Botón de inicio de sesión
         JButton loginButton = new JButton("Acceso al sistema");
         loginButton.addActionListener(e -> {
+            // Aquí puedes agregar la lógica para verificar el nombre de usuario y la contraseña
             JOptionPane.showMessageDialog(this, "Acceso exitoso");
             this.setVisible(false);
-            mainFrame.setVisible(true);
+            menuPrincipalUI.setVisible(true); // Muestra la interfaz de usuario principal después de un inicio de sesión exitoso
         });
 
         // Agregar componentes al JFrame
@@ -39,7 +49,9 @@ public class LoginFrame extends JFrame {
     public static void main(String[] args) {
         // Crear y mostrar el JFrame
         SwingUtilities.invokeLater(() -> {
-            LoginFrame frame = new LoginFrame(  new Main());
+            ExperimentoManager experimentoManager = new ExperimentoManager();
+            PoblacionBacteriasManager poblacionBacteriasManager = new PoblacionBacteriasManager();
+            LoginFrame frame = new LoginFrame(new Main(), experimentoManager, poblacionBacteriasManager);
             frame.setVisible(true);
         });
     }

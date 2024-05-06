@@ -31,6 +31,11 @@ public class PoblacionBacteriasManager {
 
     private List<PoblacionBacteriasManager> poblaciones;
 
+    public PoblacionBacteriasManager() {
+        // Implement the logic to create a bacteria population
+
+    }
+
     public void addPoblacion(PoblacionBacteriasManager poblacion) {
 
     }
