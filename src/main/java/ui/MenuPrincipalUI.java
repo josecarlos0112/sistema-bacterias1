@@ -6,10 +6,15 @@ import logica.PoblacionBacteriasManager;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.util.List;
 
 public class MenuPrincipalUI extends JFrame {
     private ExperimentoManager experimentoManager;
     private PoblacionBacteriasManager poblacionBacteriasManager;
+    private JList<PoblacionBacteriasManager> experimentoList;
+    private JTextArea experimentoDetails;
 
     public MenuPrincipalUI(ExperimentoManager experimentoManager, PoblacionBacteriasManager poblacionBacteriasManager) {
         this.experimentoManager = experimentoManager;
@@ -76,8 +81,58 @@ public class MenuPrincipalUI extends JFrame {
         borrarPoblacion.addActionListener(e -> borrarPoblacion());
         verDetallesPoblacion.addActionListener(e -> verDetallesPoblacion());
 
-        // Resto de la configuración del JFrame
-        // ...
+        // Crear la lista de experimentos
+        experimentoList = new JList<>();
+        experimentoList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        experimentoList.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                if (e.getClickCount() == 2) {
+                    PoblacionBacteriasManager selectedExperimento = experimentoList.getSelectedValue();
+                    if (selectedExperimento != null) {
+                        showExperimentoDetails(selectedExperimento);
+                    }
+                }
+            }
+        });
+
+        // Crear el área de texto para los detalles del experimento
+        experimentoDetails = new JTextArea();
+        experimentoDetails.setEditable(false);
+
+        // Crear los paneles para la lista de experimentos y los detalles del experimento
+        JPanel experimentoListPanel = new JPanel(new BorderLayout());
+        experimentoListPanel.add(new JScrollPane(experimentoList), BorderLayout.CENTER);
+
+        JPanel experimentoDetailsPanel = new JPanel(new BorderLayout());
+        experimentoDetailsPanel.add(new JScrollPane(experimentoDetails), BorderLayout.CENTER);
+
+        // Agregar los paneles al JFrame
+        add(experimentoListPanel, BorderLayout.WEST);
+        add(experimentoDetailsPanel, BorderLayout.CENTER);
+    }
+
+    // Método para mostrar los detalles de un experimento
+    private void showExperimentoDetails(PoblacionBacteriasManager experimento) {
+        StringBuilder details = new StringBuilder();
+        details.append("Nombre del experimento: ").append(experimento.getName()).append("\n");
+        details.append("Fecha de inicio: ").append(experimento.getStartDate()).append("\n");
+        details.append("Fecha de fin: ").append(experimento.getEndDate()).append("\n");
+        details.append("Cantidad inicial de bacterias: ").append(experimento.getInitialBacteriaCount()).append("\n");
+        details.append("Temperatura: ").append(experimento.getTemperature()).append("\n");
+        details.append("Condición de luz: ").append(experimento.getLightCondition()).append("\n");
+        details.append("Comida inicial: ").append(experimento.getInitialFood()).append("\n");
+        details.append("Comida final: ").append(experimento.getFinalFood()).append("\n");
+        experimentoDetails.setText(details.toString());
+    }
+
+    private void updateExperimentoList() {
+        List<PoblacionBacteriasManager> experimentos = experimentoManager.getPopulations();
+        DefaultListModel<PoblacionBacteriasManager> model = new DefaultListModel<>();
+        for (PoblacionBacteriasManager experimento : experimentos) {
+            model.addElement(experimento);
+        }
+        experimentoList.setModel(model);
     }
 
     // Métodos para manejar las acciones del menú
@@ -94,7 +149,13 @@ public class MenuPrincipalUI extends JFrame {
     }
 
     private void crearNuevoExperimento() {
-        // Implementa la lógica para crear un nuevo experimento
+        String nombre = JOptionPane.showInputDialog(this, "Introduce el nombre del experimento:");
+        if (nombre != null && !nombre.isEmpty()) {
+            PoblacionBacteriasManager experimento = new PoblacionBacteriasManager();
+            experimento.setName(nombre);
+            experimentoManager.addPopulation(experimento);
+            updateExperimentoList();
+        }
     }
 
     private void verPoblaciones() {

@@ -137,4 +137,9 @@ public class PoblacionBacteriasManager {
         // Implement the logic to calculate the food for a specific day
         return day;
     }
+
+    @Override
+    public String toString() {
+        return this.getName();
+    }
 }
