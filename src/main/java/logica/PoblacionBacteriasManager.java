@@ -1,5 +1,6 @@
 package logica;
 
+import javax.swing.*;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -40,12 +41,25 @@ public class PoblacionBacteriasManager {
 
     }
 
-    public void removePoblacion(PoblacionBacteriasManager poblacion) {
+    public static void removePoblacion(PoblacionBacteriasManager poblacion) {
         // Implement the logic to remove a bacteria population
     }
 
-    public void updatePoblacion(PoblacionBacteriasManager poblacion) {
+    public static void updatePoblacion(PoblacionBacteriasManager poblacion) {
         // Implement the logic to update a bacteria population
+    }
+
+    public static void showPoblacionDetails(PoblacionBacteriasManager poblacion) {
+        StringBuilder details = new StringBuilder();
+        details.append("Nombre de la población: ").append(poblacion.getName()).append("\n");
+        details.append("Fecha de inicio: ").append(poblacion.getStartDate()).append("\n");
+        details.append("Fecha de fin: ").append(poblacion.getEndDate()).append("\n");
+        details.append("Cantidad inicial de bacterias: ").append(poblacion.getInitialBacteriaCount()).append("\n");
+        details.append("Temperatura: ").append(poblacion.getTemperature()).append("\n");
+        details.append("Condición de luz: ").append(poblacion.getLightCondition()).append("\n");
+        details.append("Comida inicial: ").append(poblacion.getInitialFood()).append("\n");
+        details.append("Comida final: ").append(poblacion.getFinalFood()).append("\n");
+        JOptionPane.showMessageDialog(null, details.toString());
     }
 
     public String getName() {
