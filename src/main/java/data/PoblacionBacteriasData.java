@@ -1,7 +1,6 @@
 package data;
 
 import logica.PoblacionBacteriasManager;
-
 import java.io.*;
 
 public class PoblacionBacteriasData {
@@ -28,7 +27,7 @@ public class PoblacionBacteriasData {
         } catch (IOException i) {
             i.printStackTrace();
         } catch (ClassNotFoundException c) {
-            System.out.println("PoblacionBacterias class not found");
+            System.out.println("Poblacion de Bacterias no encontrada");
             c.printStackTrace();
         }
         return poblacion;

@@ -2,6 +2,7 @@
 package ui;
 
 import data.ExperimentoData;
+import data.PoblacionBacteriasData;
 import logica.ExperimentoManager;
 import logica.PoblacionBacteriasManager;
 
@@ -164,10 +165,23 @@ public class MenuPrincipalUI extends JFrame {
         String nombre = JOptionPane.showInputDialog(this, "Introduce el nombre del experimento que quieres abrir:");
         if (nombre != null && !nombre.isEmpty()) {
             // Cargar los datos del experimento
-            ExperimentoManager experimento = new ExperimentoData().cargarDatos("./experimentos/" + nombre + "/experimento.txt");
+            ExperimentoManager experimento = new ExperimentoData().cargarDatos("./experimentos/" + nombre + "/experimento.dat");
             if (experimento != null) {
                 experimentoManager = experimento;
                 updateExperimentoList();
+
+                // Cargar los datos de las poblaciones de bacterias
+                File experimentoDir = new File("./experimentos/" + nombre);
+                for (File file : experimentoDir.listFiles()) {
+                    if (file.isFile() && file.getName().endsWith(".dat") && !file.getName().equals("experimento.dat")) {
+                        PoblacionBacteriasManager poblacion = new PoblacionBacteriasData().cargarDatos(file.getPath());
+                        if (poblacion != null) {
+                            experimento.addPopulation(poblacion);
+                        }
+                    }
+                }
+                PoblacionBacteriasManager selectedExperimento = experimentoList.getSelectedValue();
+                updatePoblacionList(selectedExperimento);
             } else {
                 JOptionPane.showMessageDialog(this, "No se pudo abrir el experimento.");
             }
@@ -179,6 +193,11 @@ public class MenuPrincipalUI extends JFrame {
         if (selectedExperimento != null) {
             // Guardar los datos del experimento
             new ExperimentoData().guardarDatos(experimentoManager, "./experimentos/" + selectedExperimento.getName() + "/experimento.dat");
+
+            // Guardar los datos de las poblaciones de bacterias
+            for (PoblacionBacteriasManager poblacion : selectedExperimento.getPoblaciones()) {
+                new PoblacionBacteriasData().guardarDatos(poblacion, "./experimentos/" + selectedExperimento.getName() + "/" + poblacion.getName() + ".dat");
+            }
         } else {
             JOptionPane.showMessageDialog(this, "No hay ningún experimento seleccionado.");
         }
@@ -194,7 +213,12 @@ public class MenuPrincipalUI extends JFrame {
                 updateExperimentoList();
 
                 // Guardar los datos del experimento
-                new ExperimentoData().guardarDatos(experimentoManager, "./experimentos/" + nombre + "/experimento.txt");
+                new ExperimentoData().guardarDatos(experimentoManager, "./experimentos/" + nombre + "/experimento.dat");
+
+                // Guardar los datos de las poblaciones de bacterias
+                for (PoblacionBacteriasManager poblacion : selectedExperimento.getPoblaciones()) {
+                    new PoblacionBacteriasData().guardarDatos(poblacion, "./experimentos/" + nombre + "/" + poblacion.getName() + ".dat");
+                }
             } else {
                 JOptionPane.showMessageDialog(this, "No hay ningún experimento seleccionado.");
             }

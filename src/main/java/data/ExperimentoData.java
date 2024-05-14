@@ -27,7 +27,7 @@ public class ExperimentoData {
         } catch (IOException i) {
             i.printStackTrace();
         } catch (ClassNotFoundException c) {
-            System.out.println("Experimento class not found");
+            System.out.println("Experimento no encontrado");
             c.printStackTrace();
         }
         return experimento;
