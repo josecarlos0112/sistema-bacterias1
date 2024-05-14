@@ -2,6 +2,7 @@ package logica;
 
 import javax.swing.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -33,12 +34,12 @@ public class PoblacionBacteriasManager {
     private List<PoblacionBacteriasManager> poblaciones;
 
     public PoblacionBacteriasManager() {
-        // Implement the logic to create a bacteria population
+        this.poblaciones = new ArrayList<>();
 
     }
 
     public void addPoblacion(PoblacionBacteriasManager poblacion) {
-
+    poblaciones.add(poblacion);
     }
 
     public static void removePoblacion(PoblacionBacteriasManager poblacion) {
@@ -155,5 +156,9 @@ public class PoblacionBacteriasManager {
     @Override
     public String toString() {
         return this.getName();
+    }
+
+    public List<PoblacionBacteriasManager> getPoblaciones() {
+        return poblaciones;
     }
 }

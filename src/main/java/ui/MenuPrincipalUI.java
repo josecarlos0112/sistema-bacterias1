@@ -164,7 +164,7 @@ public class MenuPrincipalUI extends JFrame {
         String nombre = JOptionPane.showInputDialog(this, "Introduce el nombre del experimento que quieres abrir:");
         if (nombre != null && !nombre.isEmpty()) {
             // Cargar los datos del experimento
-            ExperimentoManager experimento = new ExperimentoData().cargarDatos("./experimentos/" + nombre + "/experimento.dat");
+            ExperimentoManager experimento = new ExperimentoData().cargarDatos("./experimentos/" + nombre + "/experimento.txt");
             if (experimento != null) {
                 experimentoManager = experimento;
                 updateExperimentoList();
@@ -206,8 +206,34 @@ public class MenuPrincipalUI extends JFrame {
     }
 
     private void crearNuevaPoblacion() {
-        // Implementa la lógica para crear una nueva población de bacterias
+    PoblacionBacteriasManager selectedExperimento = experimentoList.getSelectedValue();
+    if (selectedExperimento != null) {
+        String nombre = JOptionPane.showInputDialog(this, "Introduce el nombre de la población:");
+        if (nombre != null && !nombre.isEmpty()) {
+            // Aquí puedes solicitar al usuario que introduzca más detalles sobre la población de bacterias
+            // Por ejemplo, la fecha de inicio, la fecha de fin, la cantidad inicial de bacterias, etc.
+            // Por ahora, solo vamos a solicitar el nombre de la población
+
+            PoblacionBacteriasManager nuevaPoblacion = new PoblacionBacteriasManager();
+            nuevaPoblacion.setName(nombre);
+            selectedExperimento.addPoblacion(nuevaPoblacion);
+
+            // Actualizar la lista de poblaciones
+            updatePoblacionList(selectedExperimento);
+        }
+    } else {
+        JOptionPane.showMessageDialog(this, "No hay ningún experimento seleccionado.");
     }
+}
+
+private void updatePoblacionList(PoblacionBacteriasManager experimento) {
+    List<PoblacionBacteriasManager> poblaciones = experimento.getPoblaciones();
+    DefaultListModel<PoblacionBacteriasManager> model = new DefaultListModel<>();
+    for (PoblacionBacteriasManager poblacion : poblaciones) {
+        model.addElement(poblacion);
+    }
+    poblacionList.setModel(model);
+}
 
     private void borrarPoblacion() {
         // Implementa la lógica para borrar una población de bacterias
