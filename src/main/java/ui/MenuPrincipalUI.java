@@ -7,6 +7,8 @@ import logica.ExperimentoManager;
 import logica.PoblacionBacteriasManager;
 
 import javax.swing.*;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -101,13 +103,13 @@ public class MenuPrincipalUI extends JFrame {
         // Crear la lista de poblaciones
         poblacionList = new JList<>();
         poblacionList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        poblacionList.addMouseListener(new MouseAdapter() {
+        poblacionList.addListSelectionListener(new ListSelectionListener() {
             @Override
-            public void mouseClicked(MouseEvent e) {
-                if (e.getClickCount() == 2) {
+            public void valueChanged(ListSelectionEvent e) {
+                if (!e.getValueIsAdjusting()) {
                     PoblacionBacteriasManager selectedPoblacion = poblacionList.getSelectedValue();
                     if (selectedPoblacion != null) {
-                        PoblacionBacteriasManager.showPoblacionDetails(selectedPoblacion);
+                        poblacionDetails.setText(selectedPoblacion.toString());
                     }
                 }
             }

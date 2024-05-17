@@ -10,9 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e8f1c7b5-385e-4730-a49e-812907b200ff" name="Changes" comment="actualizacion de clases">
+      <change afterPath="$PROJECT_DIR$/experimentos/experimento 1/experimento.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/experimentos/experimento 1/poblacion1.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/experimentos/experimento 1/poblacion2.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/experimentos/experimento1/poblacion1.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/experimentos/experimento1/poblacion2.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data/ExperimentoData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/ExperimentoData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data/PoblacionBacteriasData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/PoblacionBacteriasData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experimentos/experimento1/experimento.dat" beforeDir="false" afterPath="$PROJECT_DIR$/experimentos/experimento1/experimento.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ui/MenuPrincipalUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/MenuPrincipalUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -118,7 +122,8 @@
       <workItem from="1715242473602" duration="77000" />
       <workItem from="1715242561688" duration="1477000" />
       <workItem from="1715596583022" duration="5686000" />
-      <workItem from="1715678489668" duration="2918000" />
+      <workItem from="1715678489668" duration="3871000" />
+      <workItem from="1715984371166" duration="612000" />
     </task>
     <task id="LOCAL-00001" summary="creacion del proyecto y de los paquetes">
       <option name="closed" value="true" />
@@ -264,7 +269,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715680971682</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="actualizacion de clases">
+      <option name="closed" value="true" />
+      <created>1715681662600</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1715681662600</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
