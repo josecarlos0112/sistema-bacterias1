@@ -1,12 +1,13 @@
 package logica;
 
 import javax.swing.*;
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class PoblacionBacteriasManager {
+public class PoblacionBacteriasManager implements Serializable {
     private String name;
     private LocalDate startDate;
     private LocalDate endDate;
