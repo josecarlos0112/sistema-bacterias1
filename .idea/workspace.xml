@@ -9,16 +9,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8f1c7b5-385e-4730-a49e-812907b200ff" name="Changes" comment="actualizacion de clases ,ademas del main principal">
+    <list default="true" id="e8f1c7b5-385e-4730-a49e-812907b200ff" name="Changes" comment="actualizacion del paquete data, modificacion para cargar y guardar informacion">
+      <change afterPath="$PROJECT_DIR$/resources/experimentos/experimento1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/experimentos/experimento2.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experimentos/experimento 1/experimento.dat" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/experimentos/experimento 1/experimento.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experimentos/experimento 1/poblacion1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/experimentos/experimento 1/poblacion1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experimentos/experimento 1/poblacion2.dat" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/experimentos/experimento 1/poblacion2.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experimentos/experimento1/experimento.dat" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/experimentos/experimento1/experimento.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experimentos/experimento1/poblacion1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/experimentos/experimento1/poblacion1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experimentos/experimento1/poblacion2.dat" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/experimentos/experimento1/poblacion2.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data/ExperimentoData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/ExperimentoData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data/PoblacionBacteriasData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/PoblacionBacteriasData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/MenuPrincipalUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/MenuPrincipalUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/experimentos/experimento 1/experimento.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/experimentos/experimento 1/poblacion1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/experimentos/experimento 1/poblacion2.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/experimentos/experimento1/experimento.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/experimentos/experimento1/poblacion1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/experimentos/experimento1/poblacion2.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/logouax(1).png" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/logouax(1).png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/logouax.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/logouax.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/uax-corto.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/uax-corto.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +133,7 @@
       <workItem from="1715596583022" duration="5686000" />
       <workItem from="1715678489668" duration="3871000" />
       <workItem from="1715984371166" duration="4078000" />
-      <workItem from="1716293861564" duration="5908000" />
+      <workItem from="1716293861564" duration="7606000" />
     </task>
     <task id="LOCAL-00001" summary="creacion del proyecto y de los paquetes">
       <option name="closed" value="true" />
@@ -298,7 +303,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716297862500</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="actualizacion del paquete data, modificacion para cargar y guardar informacion">
+      <option name="closed" value="true" />
+      <created>1716322167993</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1716322167993</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -318,6 +331,7 @@
     <MESSAGE value="actualizacion de las interfaces" />
     <MESSAGE value="actualizacion de clases" />
     <MESSAGE value="actualizacion de clases ,ademas del main principal" />
-    <option name="LAST_COMMIT_MESSAGE" value="actualizacion de clases ,ademas del main principal" />
+    <MESSAGE value="actualizacion del paquete data, modificacion para cargar y guardar informacion" />
+    <option name="LAST_COMMIT_MESSAGE" value="actualizacion del paquete data, modificacion para cargar y guardar informacion" />
   </component>
 </project>

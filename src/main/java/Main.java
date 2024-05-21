@@ -1,9 +1,12 @@
+import data.ExperimentoData;
 import logica.ExperimentoManager;
 import logica.PoblacionBacteriasManager;
 import ui.MenuPrincipalUI;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.File;
+import java.time.LocalDate;
 
 public class Main extends JFrame {
     private MenuPrincipalUI menuPrincipalUI;
@@ -14,7 +17,7 @@ public class Main extends JFrame {
         int width = (int) screenSize.getWidth();
         int height = (int) screenSize.getHeight();
         setLocation(width / 2 - 500, height / 2 - 300);
-        String iconPath = "src/resources/uax-corto.png";
+        String iconPath = "src/img/uax-corto.png";
         ImageIcon icon = new ImageIcon(iconPath);
         setIconImage(icon.getImage());
         setTitle("Sistema de Gestión y Análisis de Datos Multidimensionales");
@@ -31,7 +34,7 @@ public class Main extends JFrame {
         panelIzquierdo.setBackground(Color.GRAY);
 
         // Imagen
-        ImageIcon imagen = new ImageIcon("src/resources/logouax(1).png"); // Ajusta la ruta de la imagen según tu ubicación
+        ImageIcon imagen = new ImageIcon("src/img/logouax(1).png"); // Ajusta la ruta de la imagen según tu ubicación
         Image logouax = imagen.getImage();
         Image newimg = logouax.getScaledInstance(443, 95, java.awt.Image.SCALE_SMOOTH);//Para cambiarle el tamaño a la imagen
         imagen = new ImageIcon(newimg);//Agrega la imagen al JLabel
@@ -121,5 +124,49 @@ public class Main extends JFrame {
             Main frame = new Main();
             frame.setVisible(true);
         });
+        crearExperimentosPorDefecto();
+    }
+    private static void crearExperimentosPorDefecto() {
+        File directory = new File("resources/experimentos");
+        if (!directory.exists()) {
+            directory.mkdirs();
+        }
+
+        crearExperimentoSiNoExiste("resources/experimentos/experimento1.txt");
+        crearExperimentoSiNoExiste("resources/experimentos/experimento2.txt");
+    }
+    private static void crearExperimentoSiNoExiste(String filename) {
+        File file = new File(filename);
+        if (!file.exists()) {
+            ExperimentoManager experimento = new ExperimentoManager();
+            PoblacionBacteriasManager poblacion1 = new PoblacionBacteriasManager();
+            poblacion1.setName("Poblacion 1");
+            poblacion1.setStartDate(LocalDate.now());
+            poblacion1.setEndDate(LocalDate.now().plusDays(10));
+            poblacion1.setInitialBacteriaCount(100);
+            poblacion1.setTemperature(37.0);
+            poblacion1.setLightCondition(String.valueOf(true));
+            poblacion1.setInitialFood(100);
+            poblacion1.setIncrementDay(1);
+            poblacion1.setIncrementFood(10);
+            poblacion1.setFinalFood(200);
+            experimento.addPopulation(poblacion1);
+
+            PoblacionBacteriasManager poblacion2 = new PoblacionBacteriasManager();
+            poblacion2.setName("Poblacion 2");
+            poblacion2.setStartDate(LocalDate.now());
+            poblacion2.setEndDate(LocalDate.now().plusDays(10));
+            poblacion2.setInitialBacteriaCount(200);
+            poblacion2.setTemperature(37.0);
+            poblacion2.setLightCondition(String.valueOf(true));
+            poblacion2.setInitialFood(200);
+            poblacion2.setIncrementDay(2);
+            poblacion2.setIncrementFood(20);
+            poblacion2.setFinalFood(400);
+            experimento.addPopulation(poblacion2);
+
+            ExperimentoData data = new ExperimentoData();
+            data.guardarDatos(experimento, filename);
+        }
     }
 }

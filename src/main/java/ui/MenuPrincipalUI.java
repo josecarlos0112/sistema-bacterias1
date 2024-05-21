@@ -31,7 +31,7 @@ public class MenuPrincipalUI extends JFrame {
         int width = (int) screenSize.getWidth();
         int height = (int) screenSize.getHeight();
         setLocation(width / 2 - 500, height / 2 - 300);
-        String iconPath = "src/resources/uax-corto.png";
+        String iconPath = "src/img/uax-corto.png";
         ImageIcon icon = new ImageIcon(iconPath);
         setIconImage(icon.getImage());
         setTitle("Aplicación para gestionar cultivos de bacterias");
@@ -45,30 +45,25 @@ public class MenuPrincipalUI extends JFrame {
         JMenuBar menuBar = new JMenuBar();
 
         // Crear los submenús
-        JMenu menuArchivo = new JMenu("Archivo");
+        JMenu menuExperimento = new JMenu("Experimento");
+        JMenuItem nuevoExperimento = new JMenuItem("Crear Nuevo Experimento");
         JMenuItem abrir = new JMenuItem("Abrir Experimento");
         JMenuItem guardar = new JMenuItem("Guardar Experimento");
         JMenuItem guardarComo = new JMenuItem("Guardar Experimento Como");
-        menuArchivo.add(abrir);
-        menuArchivo.add(guardar);
-        menuArchivo.add(guardarComo);
-
-        JMenu menuExperimento = new JMenu("Experimento");
-        JMenuItem nuevoExperimento = new JMenuItem("Crear Nuevo Experimento");
-        JMenuItem verPoblaciones = new JMenuItem("Ver Poblaciones de Bacterias");
         menuExperimento.add(nuevoExperimento);
-        menuExperimento.add(verPoblaciones);
+        menuExperimento.add(abrir);
+        menuExperimento.add(guardar);
+        menuExperimento.add(guardarComo);
 
         JMenu menuPoblacion = new JMenu("Población de Bacterias");
         JMenuItem nuevaPoblacion = new JMenuItem("Crear Nueva Población de Bacterias");
         JMenuItem borrarPoblacion = new JMenuItem("Borrar Población de Bacterias");
-        JMenuItem verDetallesPoblacion = new JMenuItem("Ver Detalles de Población de Bacterias");
+        JMenuItem editarPoblacion = new JMenuItem("Editar Población de Bacterias");
         menuPoblacion.add(nuevaPoblacion);
         menuPoblacion.add(borrarPoblacion);
-        menuPoblacion.add(verDetallesPoblacion);
+        menuPoblacion.add(editarPoblacion);
 
         // Agregar los submenús al menú principal
-        menuBar.add(menuArchivo);
         menuBar.add(menuExperimento);
         menuBar.add(menuPoblacion);
 
@@ -80,10 +75,8 @@ public class MenuPrincipalUI extends JFrame {
         guardar.addActionListener(e -> guardarExperimento());
         guardarComo.addActionListener(e -> guardarExperimentoComo());
         nuevoExperimento.addActionListener(e -> crearNuevoExperimento());
-        verPoblaciones.addActionListener(e -> verPoblaciones());
         nuevaPoblacion.addActionListener(e -> crearNuevaPoblacion());
         borrarPoblacion.addActionListener(e -> borrarPoblacion());
-        verDetallesPoblacion.addActionListener(e -> verDetallesPoblacion());
 
         // Crear la lista de experimentos
         experimentoList = new JList<>();
