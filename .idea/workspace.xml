@@ -11,8 +11,14 @@
   <component name="ChangeListManager">
     <list default="true" id="e8f1c7b5-385e-4730-a49e-812907b200ff" name="Changes" comment="actualizacion de clases ,ademas del main principal">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logica/ExperimentoManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logica/ExperimentoManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logica/PoblacionBacteriasManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logica/PoblacionBacteriasManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experimentos/experimento 1/experimento.dat" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/experimentos/experimento 1/experimento.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experimentos/experimento 1/poblacion1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/experimentos/experimento 1/poblacion1.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experimentos/experimento 1/poblacion2.dat" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/experimentos/experimento 1/poblacion2.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experimentos/experimento1/experimento.dat" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/experimentos/experimento1/experimento.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experimentos/experimento1/poblacion1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/experimentos/experimento1/poblacion1.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experimentos/experimento1/poblacion2.dat" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/experimentos/experimento1/poblacion2.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/ExperimentoData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/ExperimentoData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/PoblacionBacteriasData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/PoblacionBacteriasData.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +75,9 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\usuario\Documents\GitHub\sistema-bacterias1\src\resources" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
@@ -119,7 +128,7 @@
       <workItem from="1715596583022" duration="5686000" />
       <workItem from="1715678489668" duration="3871000" />
       <workItem from="1715984371166" duration="4078000" />
-      <workItem from="1716293861564" duration="3696000" />
+      <workItem from="1716293861564" duration="5908000" />
     </task>
     <task id="LOCAL-00001" summary="creacion del proyecto y de los paquetes">
       <option name="closed" value="true" />
@@ -281,7 +290,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715985064887</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="actualizacion de clases ,ademas del main principal">
+      <option name="closed" value="true" />
+      <created>1716297862500</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1716297862500</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
