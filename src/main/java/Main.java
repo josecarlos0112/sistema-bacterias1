@@ -34,7 +34,7 @@ public class Main extends JFrame {
         panelIzquierdo.setBackground(Color.GRAY);
 
         // Imagen
-        ImageIcon imagen = new ImageIcon("src/img/logouax(1).png"); // Ajusta la ruta de la imagen según tu ubicación
+        ImageIcon imagen = new ImageIcon(getClass().getResource("/img/logouax(1).png")); // Ajusta la ruta de la imagen según tu ubicación
         Image logouax = imagen.getImage();
         Image newimg = logouax.getScaledInstance(443, 95, java.awt.Image.SCALE_SMOOTH);//Para cambiarle el tamaño a la imagen
         imagen = new ImageIcon(newimg);//Agrega la imagen al JLabel
