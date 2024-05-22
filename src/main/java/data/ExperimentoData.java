@@ -8,9 +8,9 @@ import java.time.LocalDate;
 import java.util.StringJoiner;
 
 public class ExperimentoData {
-    public void guardarDatos(ExperimentoManager experimento, String filename) {
+    public void guardarDatos(PoblacionBacteriasManager experimento, String filename) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename))) {
-            for (PoblacionBacteriasManager poblacion : experimento.getPopulations()) {
+            for (PoblacionBacteriasManager poblacion : experimento.getPoblaciones()) {
                 StringJoiner joiner = new StringJoiner("|");
                 joiner.add(poblacion.getName())
                         .add(String.valueOf(poblacion.getStartDate()))

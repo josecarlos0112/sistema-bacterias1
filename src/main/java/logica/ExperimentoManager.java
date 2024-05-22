@@ -28,9 +28,7 @@ public class ExperimentoManager  implements Serializable {
         return null;
     }
 
-    public List<PoblacionBacteriasManager> getPopulations() {
-        return populations;
-    }
+
 
     public void setPopulations(List<PoblacionBacteriasManager> populations) {
         this.populations = populations;
@@ -57,7 +55,7 @@ public class ExperimentoManager  implements Serializable {
         return false;
     }
 
-public void updatePopulation(PoblacionBacteriasManager population) {
+    public void updatePopulation(PoblacionBacteriasManager population) {
         for (PoblacionBacteriasManager p : populations) {
             if (p.getName().equals(population.getName())) {
                 p.setStartDate(population.getStartDate());
@@ -94,7 +92,10 @@ public void updatePopulation(PoblacionBacteriasManager population) {
 
     @Override
     public String toString() {
-        return "Experimento{" + "populations=" + populations + '}';
+        return "Experimento{" + "poblaciones=" + populations + '}';
     }
 
+    public List<PoblacionBacteriasManager> getPopulations() {
+        return populations;
+    }
 }

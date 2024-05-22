@@ -87,7 +87,7 @@ public class MenuPrincipalUI extends JFrame {
                 if (e.getClickCount() == 2) {
                     PoblacionBacteriasManager selectedExperimento = experimentoList.getSelectedValue();
                     if (selectedExperimento != null) {
-                        PoblacionBacteriasManager.updateExperimentoList(selectedExperimento);
+                        updateExperimentoList();
                     }
                 }
             }
@@ -163,7 +163,7 @@ public class MenuPrincipalUI extends JFrame {
     }
 
 
-    //METODOS PARA EXPERIMENTO
+    ////////////METODOS PARA EXPERIMENTO////////////////////////
     private void crearNuevoExperimento() {
         String nombre = JOptionPane.showInputDialog(this, "Introduce el nombre del experimento:");
         if (nombre != null && !nombre.isEmpty()) {
@@ -209,9 +209,7 @@ public class MenuPrincipalUI extends JFrame {
     private void guardarExperimento() {
         PoblacionBacteriasManager experimentoSeleccionado = experimentoList.getSelectedValue();
         if (experimentoSeleccionado != null) {
-            // Aquí puedes agregar el código para guardar los datos del experimento
-            // Por ejemplo, puedes usar la clase ExperimentoData para guardar los datos en un archivo
-            new ExperimentoData().guardarDatos(experimentoSeleccionado, "./experimentos/" + experimentoSeleccionado.getName() + ".dat");
+            new ExperimentoData().guardarDatos(experimentoSeleccionado, "./experimentos/" + experimentoSeleccionado.toString() + ".dat");
         }
     }
     private void guardarExperimentoComo() {
@@ -219,12 +217,12 @@ public class MenuPrincipalUI extends JFrame {
         if (nombre != null && !nombre.isEmpty()) {
             PoblacionBacteriasManager selectedExperimento = experimentoList.getSelectedValue();
             if (selectedExperimento != null) {
-                // Cambiar el nombre del experimento
+                // Cambiar el nombre del experimento en la lista de experimentos
                 selectedExperimento.setName(nombre);
                 updateExperimentoList();
 
                 // Guardar los datos del experimento
-                new ExperimentoData().guardarDatos(experimentoManager, "./experimentos/" + nombre + "/experimento.dat");
+                new ExperimentoData().guardarDatos(selectedExperimento, "./experimentos/" + nombre + "/experimento.dat");
 
                 // Guardar los datos de las poblaciones de bacterias
                 for (PoblacionBacteriasManager poblacion : selectedExperimento.getPoblaciones()) {
@@ -244,7 +242,7 @@ public class MenuPrincipalUI extends JFrame {
         experimentoList.setModel(model);
     }
 
-    //METODOS PARA POBLACION
+    //////////////////METODOS PARA POBLACION////////////////////////
 
     private void verPoblaciones() {
         // Implementa la lógica para ver las poblaciones de bacterias
@@ -275,6 +273,14 @@ public class MenuPrincipalUI extends JFrame {
             poblacionBacteriasManager.removePoblacion(poblacionSeleccionada);
             updatePoblacionList();
         }
+    }
+    private void updatePoblacionList() {
+        List<PoblacionBacteriasManager> poblaciones = poblacionBacteriasManager.getPoblaciones();
+        DefaultListModel<PoblacionBacteriasManager> model = new DefaultListModel<>();
+        for (PoblacionBacteriasManager poblacion : poblaciones) {
+            model.addElement(poblacion);
+        }
+        poblacionList.setModel(model);
     }
     private void verDetallesPoblacion() {
         // Implementa la lógica para ver los detalles de una población de bacterias

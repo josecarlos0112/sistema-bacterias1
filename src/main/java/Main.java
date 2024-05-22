@@ -165,8 +165,9 @@ public class Main extends JFrame {
             poblacion2.setFinalFood(400);
             experimento.addPopulation(poblacion2);
 
-            ExperimentoData data = new ExperimentoData();
-            data.guardarDatos(experimento, filename);
+           ExperimentoData data = new ExperimentoData();
+           data.guardarDatos(poblacion1, filename);
+           data.guardarDatos(poblacion2, filename);
         }
     }
 }
