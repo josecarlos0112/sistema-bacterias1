@@ -23,3 +23,13 @@ Estas instrucciones te permitirán obtener una copia del proyecto en funcionamie
 1. Clona el repositorio
 ```bash
 git clone https://github.com/josecarlos0112/sistema-bacterias1.git
+
+Construido con
+Java - El lenguaje de programación utilizado
+Maven - Gestión de dependencias
+Autores
+José Carlos
+Licencia
+Este proyecto está licenciado bajo la Licencia MIT - vea el archivo LICENSE.md para más detalles
+
+Por favor, reemplaza la URL del repositorio, el nombre del autor y otros detalles con tu información real.
