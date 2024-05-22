@@ -76,7 +76,7 @@ public class MenuPrincipalUI extends JFrame {
         guardarComo.addActionListener(e -> guardarExperimentoComo());
         nuevoExperimento.addActionListener(e -> crearNuevoExperimento());
         nuevaPoblacion.addActionListener(e -> crearNuevaPoblacion());
-        borrarPoblacion.addActionListener(e -> borrarPoblacion());
+        borrarPoblacion.addActionListener(e ->eliminarPoblacion());
 
         // Crear la lista de experimentos
         experimentoList = new JList<>();
@@ -87,7 +87,7 @@ public class MenuPrincipalUI extends JFrame {
                 if (e.getClickCount() == 2) {
                     PoblacionBacteriasManager selectedExperimento = experimentoList.getSelectedValue();
                     if (selectedExperimento != null) {
-                        PoblacionBacteriasManager.updatePoblacion(selectedExperimento);
+                        PoblacionBacteriasManager.updateExperimentoList(selectedExperimento);
                     }
                 }
             }
@@ -141,8 +141,8 @@ public class MenuPrincipalUI extends JFrame {
         //poblacionListPanel.setPreferredSize(new Dimension(500, 300)); // Establecer un tamaño preferido
         // Agregar los listeners a los botones
         crearPoblacionButton.addActionListener(e -> crearNuevaPoblacion());
-        editarPoblacionButton.addActionListener(e -> updatePoblacionList(experimentoList.getSelectedValue()));
-        eliminarPoblacionButton.addActionListener(e -> borrarPoblacion());
+        editarPoblacionButton.addActionListener(e -> editarPoblacion(experimentoList.getSelectedValue()));
+        eliminarPoblacionButton.addActionListener(e -> eliminarPoblacion());
 
         JPanel poblacionDetailsPanel = new JPanel(new BorderLayout());
         poblacionDetailsPanel.add(new JScrollPane(poblacionDetails), BorderLayout.CENTER);
@@ -162,38 +162,17 @@ public class MenuPrincipalUI extends JFrame {
         add(experimentoListPanel, BorderLayout.WEST);
     }
 
-    private void borrarExperimento() {
-        PoblacionBacteriasManager selectedExperimento = experimentoList.getSelectedValue();
-        if (selectedExperimento != null) {
-            experimentoManager.removePopulation(selectedExperimento);
-            updateExperimentoList();
-        } else {
-            JOptionPane.showMessageDialog(this, "No hay ningún experimento seleccionado.");
-        }
-    }
 
-    private void updateExperimentoList() {
-        List<PoblacionBacteriasManager> experimentos = experimentoManager.getPopulations();
-        DefaultListModel<PoblacionBacteriasManager> model = new DefaultListModel<>();
-        for (PoblacionBacteriasManager experimento : experimentos) {
-            model.addElement(experimento);
-        }
-        experimentoList.setModel(model);
-    }
-
+    //METODOS PARA EXPERIMENTO
     private void crearNuevoExperimento() {
         String nombre = JOptionPane.showInputDialog(this, "Introduce el nombre del experimento:");
         if (nombre != null && !nombre.isEmpty()) {
-            PoblacionBacteriasManager experimento = new PoblacionBacteriasManager();
-            experimento.setName(nombre);
-            experimentoManager.addPopulation(experimento);
+            PoblacionBacteriasManager nuevoExperimento = new PoblacionBacteriasManager();
+            nuevoExperimento.setName(nombre);
+            experimentoManager.addPopulation(nuevoExperimento);
             updateExperimentoList();
-
-            // Crear un directorio para el experimento
-            new File("./experimentos/" + nombre).mkdirs();
         }
     }
-
     private void abrirExperimento() {
         String nombre = JOptionPane.showInputDialog(this, "Introduce el nombre del experimento que quieres abrir:");
         if (nombre != null && !nombre.isEmpty()) {
@@ -214,28 +193,27 @@ public class MenuPrincipalUI extends JFrame {
                     }
                 }
                 PoblacionBacteriasManager selectedExperimento = experimentoList.getSelectedValue();
-                updatePoblacionList(selectedExperimento);
+                updateExperimentoList();
             } else {
                 JOptionPane.showMessageDialog(this, "No se pudo abrir el experimento.");
             }
         }
     }
-
-    private void guardarExperimento() {
-        PoblacionBacteriasManager selectedExperimento = experimentoList.getSelectedValue();
-        if (selectedExperimento != null) {
-            // Guardar los datos del experimento
-            new ExperimentoData().guardarDatos(experimentoManager, "./experimentos/" + selectedExperimento.getName() + "/experimento.dat");
-
-            // Guardar los datos de las poblaciones de bacterias
-            for (PoblacionBacteriasManager poblacion : selectedExperimento.getPoblaciones()) {
-                new PoblacionBacteriasData().guardarDatos(poblacion, "./experimentos/" + selectedExperimento.getName() + "/" + poblacion.getName() + ".dat");
-            }
-        } else {
-            JOptionPane.showMessageDialog(this, "No hay ningún experimento seleccionado.");
+    private void borrarExperimento() {
+        PoblacionBacteriasManager experimentoSeleccionado = experimentoList.getSelectedValue();
+        if (experimentoSeleccionado != null) {
+            experimentoManager.removePopulation(experimentoSeleccionado);
+            updateExperimentoList();
         }
     }
-
+    private void guardarExperimento() {
+        PoblacionBacteriasManager experimentoSeleccionado = experimentoList.getSelectedValue();
+        if (experimentoSeleccionado != null) {
+            // Aquí puedes agregar el código para guardar los datos del experimento
+            // Por ejemplo, puedes usar la clase ExperimentoData para guardar los datos en un archivo
+            new ExperimentoData().guardarDatos(experimentoSeleccionado, "./experimentos/" + experimentoSeleccionado.getName() + ".dat");
+        }
+    }
     private void guardarExperimentoComo() {
         String nombre = JOptionPane.showInputDialog(this, "Introduce el nuevo nombre para el experimento:");
         if (nombre != null && !nombre.isEmpty()) {
@@ -257,45 +235,47 @@ public class MenuPrincipalUI extends JFrame {
             }
         }
     }
+    private void updateExperimentoList() {
+        List<PoblacionBacteriasManager> experimentos = experimentoManager.getPopulations();
+        DefaultListModel<PoblacionBacteriasManager> model = new DefaultListModel<>();
+        for (PoblacionBacteriasManager experimento : experimentos) {
+            model.addElement(experimento);
+        }
+        experimentoList.setModel(model);
+    }
+
+    //METODOS PARA POBLACION
 
     private void verPoblaciones() {
         // Implementa la lógica para ver las poblaciones de bacterias
     }
-
     private void crearNuevaPoblacion() {
-    PoblacionBacteriasManager selectedExperimento = experimentoList.getSelectedValue();
-    if (selectedExperimento != null) {
         String nombre = JOptionPane.showInputDialog(this, "Introduce el nombre de la población:");
         if (nombre != null && !nombre.isEmpty()) {
-            // Aquí puedes solicitar al usuario que introduzca más detalles sobre la población de bacterias
-            // Por ejemplo, la fecha de inicio, la fecha de fin, la cantidad inicial de bacterias, etc.
-            // Por ahora, solo vamos a solicitar el nombre de la población
-
             PoblacionBacteriasManager nuevaPoblacion = new PoblacionBacteriasManager();
             nuevaPoblacion.setName(nombre);
-            selectedExperimento.addPoblacion(nuevaPoblacion);
-
-            // Actualizar la lista de poblaciones
-            updatePoblacionList(selectedExperimento);
+            poblacionBacteriasManager.addPoblacion(nuevaPoblacion);
+            updatePoblacionList();
         }
-    } else {
-        JOptionPane.showMessageDialog(this, "No hay ningún experimento seleccionado.");
     }
-}
-
-private void updatePoblacionList(PoblacionBacteriasManager experimento) {
-    List<PoblacionBacteriasManager> poblaciones = experimento.getPoblaciones();
-    DefaultListModel<PoblacionBacteriasManager> model = new DefaultListModel<>();
-    for (PoblacionBacteriasManager poblacion : poblaciones) {
-        model.addElement(poblacion);
+    private void editarPoblacion(PoblacionBacteriasManager selectedValue) {
+        PoblacionBacteriasManager poblacionSeleccionada = poblacionList.getSelectedValue();
+        if (poblacionSeleccionada != null) {
+            String nuevoNombre = JOptionPane.showInputDialog(this, "Introduce el nuevo nombre de la población:");
+            if (nuevoNombre != null && !nuevoNombre.isEmpty()) {
+                poblacionSeleccionada.setName(nuevoNombre);
+                poblacionBacteriasManager.updatePoblacion(poblacionSeleccionada);
+                updatePoblacionList();
+            }
+        }
     }
-    poblacionList.setModel(model);
-}
-
-    private void borrarPoblacion() {
-        // Implementa la lógica para borrar una población de bacterias
+    private void eliminarPoblacion() {
+        PoblacionBacteriasManager poblacionSeleccionada = poblacionList.getSelectedValue();
+        if (poblacionSeleccionada != null) {
+            poblacionBacteriasManager.removePoblacion(poblacionSeleccionada);
+            updatePoblacionList();
+        }
     }
-
     private void verDetallesPoblacion() {
         // Implementa la lógica para ver los detalles de una población de bacterias
     }

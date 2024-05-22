@@ -39,16 +39,29 @@ public class PoblacionBacteriasManager implements Serializable {
 
     }
 
+    // Método para crear una nueva población
     public void addPoblacion(PoblacionBacteriasManager poblacion) {
-    poblaciones.add(poblacion);
+        this.poblaciones.add(poblacion);
     }
 
-    public static void removePoblacion(PoblacionBacteriasManager poblacion) {
-        // Implement the logic to remove a bacteria population
+    public void removePoblacion(PoblacionBacteriasManager poblacion) {
+        this.poblaciones.remove(poblacion);
     }
 
-    public static void updatePoblacion(PoblacionBacteriasManager poblacion) {
-        // Implement the logic to update a bacteria population
+    public void updatePoblacion(PoblacionBacteriasManager poblacion) {
+        for (PoblacionBacteriasManager p : poblaciones) {
+            if (p.getName().equals(poblacion.getName())) {
+                p.setStartDate(poblacion.getStartDate());
+                p.setEndDate(poblacion.getEndDate());
+                p.setInitialBacteriaCount(poblacion.getInitialBacteriaCount());
+                p.setTemperature(poblacion.getTemperature());
+                p.setLightCondition(poblacion.getLightCondition());
+                p.setInitialFood(poblacion.getInitialFood());
+                p.setIncrementDay(poblacion.getIncrementDay());
+                p.setIncrementFood(poblacion.getIncrementFood());
+                p.setFinalFood(poblacion.getFinalFood());
+            }
+        }
     }
 
     public static void showPoblacionDetails(PoblacionBacteriasManager poblacion) {
