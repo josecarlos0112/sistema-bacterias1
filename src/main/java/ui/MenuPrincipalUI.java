@@ -114,24 +114,62 @@ public class MenuPrincipalUI extends JFrame {
 
         // Crear los paneles para la lista de experimentos y los detalles del experimento
         JPanel experimentoListPanel = new JPanel(new BorderLayout());
+        JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
+        JButton crearExperimentoButton = new JButton("Crear Experimento");
+        JButton borrarExperimentoButton = new JButton("Borrar Experimento");
+        buttonPanel.add(crearExperimentoButton);
+        buttonPanel.add(borrarExperimentoButton);
+        experimentoListPanel.add(buttonPanel, BorderLayout.SOUTH);
         experimentoListPanel.add(new JScrollPane(experimentoList), BorderLayout.CENTER);
         experimentoListPanel.setPreferredSize(new Dimension(300, 300)); // Establecer un tamaño preferido
+        crearExperimentoButton.addActionListener(e -> crearNuevoExperimento());
+        borrarExperimentoButton.addActionListener(e -> borrarExperimento());
 
         JPanel poblacionListPanel = new JPanel(new BorderLayout());
+        JPanel buttonPanel1 = new JPanel(new FlowLayout(FlowLayout.RIGHT));
+        // Crear los botones para crear, editar y eliminar poblaciones
+        JButton crearPoblacionButton = new JButton("Crear Población");
+        JButton editarPoblacionButton = new JButton("Editar Población");
+        JButton eliminarPoblacionButton = new JButton("Eliminar Población");
+        // Agregar los botones al panel
+        buttonPanel1.add(crearPoblacionButton);
+        buttonPanel1.add(editarPoblacionButton);
+        buttonPanel1.add(eliminarPoblacionButton);
         poblacionListPanel.add(new JScrollPane(poblacionList), BorderLayout.CENTER);
-        poblacionListPanel.setPreferredSize(new Dimension(500, 300)); // Establecer un tamaño preferido
+        poblacionListPanel.add(buttonPanel1, BorderLayout.SOUTH);
+        // Establecer un tamaño preferido
+        //poblacionListPanel.setPreferredSize(new Dimension(500, 300)); // Establecer un tamaño preferido
+        // Agregar los listeners a los botones
+        crearPoblacionButton.addActionListener(e -> crearNuevaPoblacion());
+        editarPoblacionButton.addActionListener(e -> updatePoblacionList(experimentoList.getSelectedValue()));
+        eliminarPoblacionButton.addActionListener(e -> borrarPoblacion());
 
         JPanel poblacionDetailsPanel = new JPanel(new BorderLayout());
         poblacionDetailsPanel.add(new JScrollPane(poblacionDetails), BorderLayout.CENTER);
 
 
-        // Crear el JSplitPane y agregar los paneles a él
-        JSplitPane splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, poblacionListPanel, poblacionDetailsPanel);
-        splitPane.setResizeWeight(0.5); // Esto hace que ambos paneles tengan el mismo tamaño
+        // Crear el panel que contendrá los otros dos paneles
+        JPanel panelDerecho = new JPanel(new GridLayout(2, 1));
+
+        // Agregar los paneles al panelDerecho
+        panelDerecho.add(poblacionListPanel);
+        panelDerecho.add(poblacionDetailsPanel);
+
+        // Agregar el panelDerecho al JFrame
+        add(panelDerecho, BorderLayout.CENTER);
 
         // Agregar los paneles al JFrame
         add(experimentoListPanel, BorderLayout.WEST);
-        add(splitPane, BorderLayout.CENTER);
+    }
+
+    private void borrarExperimento() {
+        PoblacionBacteriasManager selectedExperimento = experimentoList.getSelectedValue();
+        if (selectedExperimento != null) {
+            experimentoManager.removePopulation(selectedExperimento);
+            updateExperimentoList();
+        } else {
+            JOptionPane.showMessageDialog(this, "No hay ningún experimento seleccionado.");
+        }
     }
 
     private void updateExperimentoList() {
