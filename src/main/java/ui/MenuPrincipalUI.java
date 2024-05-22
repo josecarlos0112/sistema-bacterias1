@@ -32,7 +32,7 @@ public class MenuPrincipalUI extends JFrame {
         int height = (int) screenSize.getHeight();
         setLocation(width / 2 - 500, height / 2 - 300);
         String iconPath = "/img/uax-corto.png";
-        ImageIcon icon = new ImageIcon(iconPath);
+        ImageIcon icon = new ImageIcon(getClass().getResource(iconPath));
         setIconImage(icon.getImage());
         setTitle("Aplicación para gestionar cultivos de bacterias");
         setSize(1000, 600);

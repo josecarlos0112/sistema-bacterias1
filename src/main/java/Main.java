@@ -17,8 +17,8 @@ public class Main extends JFrame {
         int width = (int) screenSize.getWidth();
         int height = (int) screenSize.getHeight();
         setLocation(width / 2 - 500, height / 2 - 300);
-        String iconPath = "src/img/uax-corto.png";
-        ImageIcon icon = new ImageIcon(iconPath);
+        String iconPath = "/img/uax-corto.png";
+        ImageIcon icon = new ImageIcon(getClass().getResource(iconPath));
         setIconImage(icon.getImage());
         setTitle("Sistema de Gestión y Análisis de Datos Multidimensionales");
         setSize(1000, 600);
