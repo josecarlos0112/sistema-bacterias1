@@ -9,7 +9,7 @@ import java.io.File;
 import java.time.LocalDate;
 
 public class Main extends JFrame {
-    private MenuPrincipalUI menuPrincipalUI;
+    private static MenuPrincipalUI menuPrincipalUI;
 
     public Main() {
         // Configuración del JFrame
@@ -123,8 +123,20 @@ public class Main extends JFrame {
         SwingUtilities.invokeLater(() -> {
             Main frame = new Main();
             frame.setVisible(true);
+            crearExperimentosPorDefecto();
+            menuPrincipalUI.updateExperimentoList();
+            // Cargar los experimentos guardados
+            File directory = new File("resources/experimentos");
+            File[] files = directory.listFiles();
+            if (files != null) {
+                ExperimentoData data = new ExperimentoData();
+                for (File file : files) {
+                    PoblacionBacteriasManager poblacion = data.cargarDatos(file.getPath());
+                    menuPrincipalUI.getExperimentoManager().addPopulation(poblacion);
+                }
+            }
+            menuPrincipalUI.updateExperimentoList();
         });
-        crearExperimentosPorDefecto();
     }
     private static void crearExperimentosPorDefecto() {
         File directory = new File("resources/experimentos");

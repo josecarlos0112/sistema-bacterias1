@@ -1,7 +1,7 @@
 package logica;
 
 import javax.swing.*;
-import java.io.Serializable;
+import java.io.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -171,6 +171,31 @@ public class PoblacionBacteriasManager implements Serializable {
     public String toString() {
         return this.getName();
     }
+
+    public ExperimentoManager cargarDatos(String filename) {
+    ExperimentoManager experimento = new ExperimentoManager();
+    try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
+        String line;
+        while ((line = reader.readLine()) != null) {
+            String[] parts = line.split("\\|");
+            PoblacionBacteriasManager poblacion = new PoblacionBacteriasManager();
+            poblacion.setName(parts[0]);
+            poblacion.setStartDate(LocalDate.parse(parts[1]));
+            poblacion.setEndDate(LocalDate.parse(parts[2]));
+            poblacion.setInitialBacteriaCount(Integer.parseInt(parts[3]));
+            poblacion.setTemperature(Double.parseDouble(parts[4]));
+            poblacion.setLightCondition(String.valueOf(Boolean.parseBoolean(parts[5])));
+            poblacion.setInitialFood(Integer.parseInt(parts[6]));
+            poblacion.setIncrementDay(Integer.parseInt(parts[7]));
+            poblacion.setIncrementFood(Integer.parseInt(parts[8]));
+            poblacion.setFinalFood(Integer.parseInt(parts[9]));
+            experimento.addPopulation(poblacion);
+        }
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+    return experimento;
+}
 
     public List<PoblacionBacteriasManager> getPoblaciones() {
         return poblaciones;

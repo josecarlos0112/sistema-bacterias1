@@ -14,6 +14,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/data/ExperimentoData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/ExperimentoData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/logica/ExperimentoManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logica/ExperimentoManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/logica/PoblacionBacteriasManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logica/PoblacionBacteriasManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ui/MenuPrincipalUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/MenuPrincipalUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -133,7 +134,7 @@
       <workItem from="1715596583022" duration="5686000" />
       <workItem from="1715678489668" duration="3871000" />
       <workItem from="1715984371166" duration="4078000" />
-      <workItem from="1716293861564" duration="12277000" />
+      <workItem from="1716293861564" duration="15175000" />
     </task>
     <task id="LOCAL-00001" summary="creacion del proyecto y de los paquetes">
       <option name="closed" value="true" />
@@ -335,7 +336,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716338566110</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="actualizaciones">
+      <option name="closed" value="true" />
+      <created>1716339860473</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1716339860473</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ExperimentoManager  implements Serializable {
+public class ExperimentoManager extends PoblacionBacteriasManager implements Serializable {
     private List<PoblacionBacteriasManager> populations;
 
     public ExperimentoManager() {
